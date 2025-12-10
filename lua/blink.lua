@@ -1,5 +1,5 @@
 -- main module file
-local module = require("plugin_name.module")
+local module = require("blink.module")
 
 ---@class Config
 ---@field opt string Your config option
@@ -21,7 +21,12 @@ M.setup = function(args)
 end
 
 M.hello = function()
+  print(M.config.opt)
   return module.my_first_function(M.config.opt)
+end
+
+M.get_item = function(account, item_id)
+  return module.blink_get_item(account, item_id)
 end
 
 return M
